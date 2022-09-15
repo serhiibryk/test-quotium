@@ -3,32 +3,6 @@ import classNames from "classnames";
 
 import useStyles from "./style";
 
-interface HexCell {
-  title?: string;
-  clickable: boolean;
-  level: number;
-  parent: string;
-  backgroundColor?: string;
-  border?: {
-    borderTop?: string;
-    borderBottom?: string;
-    borderRight?: string;
-    borderLeft?: string;
-  };
-  interactiveCases: string[];
-  icon?: ReactNode;
-  color?: string;
-}
-
-interface HexProps {
-  content: ReactNode;
-  cell: HexCell;
-  level: number;
-  className?: string;
-  isActive: boolean;
-  onClick: () => void;
-}
-
 const Hex: FC<HexProps> = ({ content, cell, level, isActive, onClick }) => {
   const classes = useStyles();
   const bgColor = cell.backgroundColor ?? "#FFF";

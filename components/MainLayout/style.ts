@@ -1,7 +1,1 @@
-import { createUseStyles } from "react-jss";
-
-const useStyles = createUseStyles({
-  root: {},
-});
-
-export default useStyles;
+import styled from "styled-components";
