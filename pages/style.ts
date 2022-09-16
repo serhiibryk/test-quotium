@@ -11,3 +11,13 @@ export const TextContainer = styled.div`
   padding-left: 20px;
   border-left: 10px solid #cccccc;
 `;
+
+export const TextBold = styled.span`
+  font-weight: 600;
+`;
+
+export const CardContainer = styled.div`
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+`;

@@ -1,12 +1,12 @@
 import styled from "styled-components";
 
 export const Thing = styled.footer`
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
   min-height: 200px;
   background-color: #31404b;
-  display: flex;
   padding: 10px 50px 10px 50px;
-  justify-content: center;
-  text-align: center;
   border-top: 5px solid;
   border-image: linear-gradient(
     to right,

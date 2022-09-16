@@ -9,7 +9,7 @@ export const LinkHome = styled.a`
   text-decoration: underline;
 `;
 
-export const NextLink = styled.a`
+export const NextLink = styled.span`
   text-decoration: underline;
 `;
 

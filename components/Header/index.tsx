@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ImgLogo } from "../Footer/style";
+import { ImgLogo } from "./style";
 import NavBar from "../NavBar";
 
 import { BreadCrumbsContainer, Thing } from "./style";

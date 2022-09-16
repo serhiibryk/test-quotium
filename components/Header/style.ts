@@ -16,3 +16,8 @@ export const BreadCrumbsContainer = styled.div`
   top: 100px;
   left: 50px;
 `;
+
+export const ImgLogo = styled.img`
+  height: 50px;
+  width: 200px;
+`;
