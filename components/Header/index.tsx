@@ -1,6 +1,6 @@
 import React from "react";
 
-import { ImgLogo } from "./style";
+import { ImgLogo, Wrapper } from "./style";
 import NavBar from "../NavBar";
 
 import { BreadCrumbsContainer, Thing } from "./style";
@@ -10,7 +10,9 @@ const Header = () => {
   return (
     <Thing>
       <ImgLogo src="http://photos.prnewswire.com/prnfull/20140425/79146" />
-      <NavBar />
+      <Wrapper>
+        <NavBar />
+      </Wrapper>
       <BreadCrumbsContainer>
         <BreadCrumbs />
       </BreadCrumbsContainer>

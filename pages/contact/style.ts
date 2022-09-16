@@ -24,4 +24,5 @@ export const Button = styled.button`
   background-color: white;
   color: black;
   font-weight: 500;
+  border: 2px solid black;
 `;

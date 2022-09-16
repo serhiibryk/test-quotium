@@ -11,6 +11,8 @@ const Contact = () => {
   return (
     <Thing>
       <MainContainer>
+        <h2>Contact us</h2>
+        <p>Needed implementation</p>
         <Input title={"Name"} rules={""} placeholder={""}>
           {}
         </Input>
