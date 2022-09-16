@@ -2,7 +2,7 @@ import React from "react";
 import { Thing } from "./style";
 
 const Contact = () => {
-  return <Thing>Contact</Thing>;
+  return <Thing></Thing>;
 };
 
 export default Contact;

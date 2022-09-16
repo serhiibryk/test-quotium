@@ -23,3 +23,8 @@ declare interface HexProps {
   isActive: boolean;
   onClick: () => void;
 }
+
+declare interface IButton {
+  title: string;
+  onClick: () => {};
+}

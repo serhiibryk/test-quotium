@@ -888,7 +888,7 @@ const HexagonClear = () => {
     <div
       className={"App"}
       style={{
-        marginTop: "35px",
+        marginTop: "10px",
       }}
     >
       <div>
