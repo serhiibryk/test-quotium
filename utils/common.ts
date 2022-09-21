@@ -16,3 +16,9 @@ export const menuItems = [
     href: "/contact",
   },
 ];
+
+export const palette = {
+  black: "#000000",
+  white: "#FFFFFF",
+  footerGrey: "#31404b",
+};

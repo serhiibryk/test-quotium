@@ -1,12 +1,18 @@
 import styled from "styled-components";
+import { palette } from "../../utils/common";
 
 export const InputBar = styled.input`
   margin: 10px 0 0 0;
   height: 20px;
   width: 350px;
-  background-color: white;
+  background-color: ${palette.white};
   color: black;
-  border: none;
+  border: 2px solid black;
+
+  &:focus {
+    outline: none;
+    box-shadow: 0px 0px 2px black;
+  }
 `;
 
 export const Title = styled.label`

@@ -1,10 +1,7 @@
 import React from "react";
 
-import { ImgLogo, Wrapper } from "./style";
+import { ImgLogo, Thing, Wrapper } from "./style";
 import NavBar from "../NavBar";
-
-import { BreadCrumbsContainer, Thing } from "./style";
-import { BreadCrumbs } from "../Breadcrumbs";
 
 const Header = () => {
   return (
@@ -13,9 +10,6 @@ const Header = () => {
       <Wrapper>
         <NavBar />
       </Wrapper>
-      <BreadCrumbsContainer>
-        <BreadCrumbs />
-      </BreadCrumbsContainer>
     </Thing>
   );
 };

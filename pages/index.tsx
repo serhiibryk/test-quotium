@@ -1,8 +1,9 @@
 import React from "react";
 import type { NextPage } from "next";
 
-import { CardContainer, TextBold, TextContainer, Thing } from "./style";
 import Card from "../components/Card";
+
+import { CardContainer, TextBold, TextContainer, Thing } from "./style";
 
 const Home: NextPage = () => {
   return (

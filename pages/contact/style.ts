@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { palette } from "../../utils/common";
 
 export const MainContainer = styled.section`
   display: flex;
@@ -21,7 +22,7 @@ export const Button = styled.button`
   width: 300px;
   border: none;
   text-align: center;
-  background-color: white;
+  background-color: ${palette.white};
   color: black;
   font-weight: 500;
   border: 2px solid black;

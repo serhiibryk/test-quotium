@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { palette } from "../utils/common";
 
 export const Thing = styled.div`
   max-width: 1400px;
@@ -9,7 +10,7 @@ export const Thing = styled.div`
 export const TextContainer = styled.div`
   max-width: 400px;
   padding-left: 20px;
-  border-left: 10px solid #cccccc;
+  border-left: 10px solid ${palette.white};
 `;
 
 export const TextBold = styled.span`
