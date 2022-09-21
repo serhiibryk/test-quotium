@@ -2,7 +2,7 @@ import React from "react";
 
 import Input from "../../components/Input";
 
-import { Button, MainContainer, Thing } from "./style";
+import { Button, ButtonContainer, MainContainer, Thing } from "./style";
 
 const Contact = () => {
   const handleClick = () => {
@@ -25,9 +25,11 @@ const Contact = () => {
         <Input title={"Phone"} rules={""} placeholder={""}>
           {}
         </Input>
-        <Button onClick={handleClick}>
-          Contact me back for a free project evaluation
-        </Button>
+        <ButtonContainer>
+          <Button onClick={handleClick}>
+            Contact me back for a free project evaluation
+          </Button>
+        </ButtonContainer>
       </MainContainer>
     </Thing>
   );

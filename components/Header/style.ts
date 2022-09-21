@@ -7,12 +7,16 @@ export const Thing = styled.header`
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 1rem 5rem 1rem 5rem;
+  padding: 1rem 10rem 1rem 10rem;
+
+  @media screen and (max-width: 760px) {
+  }
 `;
 
 export const ImgLogo = styled.img`
   height: 70px;
   width: 200px;
+  margin-right: 4rem;
 `;
 
 export const Wrapper = styled.div`

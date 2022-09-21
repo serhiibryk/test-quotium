@@ -3,7 +3,7 @@ import { palette } from "../utils/common";
 
 export const Thing = styled.div`
   max-width: 1400px;
-  padding: 1rem 5rem 1rem 5rem;
+  padding: 1rem 10rem 1rem 10rem;
   min-height: calc(100vh - 300px);
 `;
 
@@ -19,6 +19,5 @@ export const TextBold = styled.span`
 
 export const CardContainer = styled.div`
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  flex-wrap: wrap;
 `;

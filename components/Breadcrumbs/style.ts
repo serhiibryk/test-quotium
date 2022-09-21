@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const Thing = styled.div`
   display: flex;
   flex-direction: row;
-  margin: 0 0 0 5rem;
+  margin: 0 0 0 10rem;
   font-size: 18px;
 `;
 

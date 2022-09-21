@@ -13,6 +13,10 @@ export const InputBar = styled.input`
     outline: none;
     box-shadow: 0 0 3px black;
   }
+
+  @media screen and (max-width: 775px) {
+    width: 20rem;
+  }
 `;
 
 export const Title = styled.label`
@@ -34,4 +38,8 @@ export const InputContainer = styled.div`
   display: flex;
   flex-direction: row;
   justify-content: space-between;
+
+  @media screen and (max-width: 775px) {
+    width: 28rem;
+  }
 `;

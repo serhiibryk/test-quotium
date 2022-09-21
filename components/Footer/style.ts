@@ -7,7 +7,7 @@ export const Thing = styled.footer`
   text-align: center;
   min-height: 20rem;
   background-color: ${palette.footerGrey};
-  padding: 1rem 5rem 1rem 5rem;
+  padding: 1rem 10rem 1rem 10rem;
   border-top: 5px solid;
   border-image: linear-gradient(
     to right,

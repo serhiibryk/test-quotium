@@ -1,16 +1,29 @@
 import React from "react";
+
 import { useRouter } from "next/router";
 
 import { menuItems } from "../../utils/common";
 import Button from "../Button";
+import MyModal from "../MyReactModal";
+import useToggle from "../../hooks/useToggle";
+
+import { ButtonOpenModal, MenuContainer, ModalContainer } from "./style";
 
 const NavBar = () => {
+  const [isModalOpen, onModalOpen, onModalClose] = useToggle();
+
   const router = useRouter();
   return (
     <nav>
-      {menuItems.map(({ title, href }, index: number) => (
-        <Button key={index} onClick={() => router.push(href)} title={title} />
-      ))}
+      <MenuContainer>
+        {menuItems.map(({ title, href }, index: number) => (
+          <Button key={index} onClick={() => router.push(href)} title={title} />
+        ))}
+      </MenuContainer>
+      <ModalContainer>
+        <ButtonOpenModal onClick={onModalOpen}> &#9776; </ButtonOpenModal>
+        {isModalOpen && <MyModal onClose={onModalClose} />}
+      </ModalContainer>
     </nav>
   );
 };
