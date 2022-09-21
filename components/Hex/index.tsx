@@ -1,16 +1,15 @@
-import React, { FC, ReactNode } from "react";
+import React, { FC } from "react";
 import classNames from "classnames";
 
-import useStyles from "./style";
+import { MainComponent } from "./style";
 
 const Hex: FC<HexProps> = ({ content, cell, level, isActive, onClick }) => {
-  const classes = useStyles();
   const bgColor = cell.backgroundColor ?? "#FFF";
   const size = 70;
 
   return (
-    <div
-      className={classNames(classes.root, "hex", {
+    <MainComponent
+      className={classNames("hex", {
         level1: level === 1,
         level2: level === 2,
         isActive,
@@ -79,7 +78,7 @@ const Hex: FC<HexProps> = ({ content, cell, level, isActive, onClick }) => {
           right: 0,
         }}
       />
-    </div>
+    </MainComponent>
   );
 };
 

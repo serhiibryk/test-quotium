@@ -1,44 +1,42 @@
-import { createUseStyles } from "react-jss";
+import styled from "styled-components";
 
-const useStyles = createUseStyles({
-  root: {
-    "& .inner-block": {
-      borderTop: "0.9px solid #e3e3e8",
-      borderBottom: "0.9px solid #e3e3e8",
-    },
+export const MainComponent = styled.div`
+  height: 110px;
+  width: 100px;
 
-    "&.level1": {
-      zIndex: "10",
+  & .inner-block {
+    border-top: 0.9px solid #e3e3e8;
+    border-bottom: 0.9px solid #e3e3e8;
+  }
 
-      "& .inner-block": {
-        borderTop: "1px solid black",
-        borderBottom: "1px solid black",
-      },
+  &.level1 {
+    z-index: 10;
 
-      "&.isActive": {
-        transform: "scale(1.5)",
-        zIndex: "11 !important",
+    & .inner-block {
+      border-top: 1px solid black;
+      border-bottom: 1px solid black;
+    }
 
-        "& .inner-block": {
-          borderTop: "1px solid #4991ff",
-          borderBottom: "1px solid #4991ff",
-        },
-      },
-    },
+    &.isActive {
+      transform: scale(1.5);
+      z-index: 11 !important;
 
-    "&.level2": {
-      "&.isActive": {
-        // borderTop: '1px solid blue',
-        // borderBottom: '1px solid blue',
+      & .inner-block {
+        border-top: 1px solid #4991ff;
+        border-bottom: 1px solid #4991ff;
+      }
+    }
+  }
 
-        "& .inner-block": {
-          borderTop: "2px solid #2278fa",
-          borderBottom: "2px solid #2278fa",
-        },
-      },
-    },
-  },
-  board: {},
-});
+  &.level2 {
+    &.isActive {
+      border-top: 1px solid blue;
+      border-bottom: 1px solid blue;
 
-export default useStyles;
+      & .inner-block {
+        border-top: 2px solid #2278fa;
+        border-bottom: 2px solid #2278fa;
+      }
+    }
+  }
+`;

@@ -1,22 +1,11 @@
-import { createUseStyles } from "react-jss";
+import styled from "styled-components";
 
-const useStyles = createUseStyles({
-  root: {
-    marginTop: "35px",
-    fontFamily: "sans-serif",
-    textAlign: "center",
+export const MainContainer = styled.div`
+  margin-top: 10px;
+`;
 
-    "& .hex:hover": {},
-  },
-  board: {
-    marginTop: "-14px",
-    display: "flex",
-    justifyContent: "center",
-  },
-  hex: {
-    height: "110px",
-    width: "100px",
-  },
-});
-
-export default useStyles;
+export const Board = styled.div`
+  margin-top: -14px;
+  display: flex;
+  justify-content: center;
+`;

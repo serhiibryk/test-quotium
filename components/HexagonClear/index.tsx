@@ -1,8 +1,7 @@
-import React, { ReactNode, useMemo, useState } from "react";
+import React, { useMemo, useState } from "react";
 
 import Hex from "../Hex";
-
-import useStyles from "./style";
+import { Board, MainContainer } from "./style";
 
 const DEFAULT_CELL: HexCell = {
   parent: "",
@@ -855,7 +854,7 @@ const generateBoard = (activeCase: string, parent: string): HexCell[][] => {
 };
 
 const HexagonClear = () => {
-  const classes = useStyles();
+  // const classes = useStyles();
   const [activeCase, setActiveCase] = useState({
     activeId: "",
     parent: "",
@@ -885,18 +884,12 @@ const HexagonClear = () => {
   };
 
   return (
-    <div
-      className={"App"}
-      style={{
-        marginTop: "10px",
-      }}
-    >
+    <MainContainer>
       <div>
         {board.map((row: any, rowIndex: number) => {
           return (
-            <div
+            <Board
               key={rowIndex}
-              className={classes.board}
               style={{
                 marginTop: "-10px",
                 display: "flex",
@@ -906,7 +899,6 @@ const HexagonClear = () => {
               {row.map((cell: HexCell, cellIndex: number) => {
                 return (
                   <Hex
-                    className={classes.hex}
                     key={cellIndex}
                     isActive={
                       activeCase.activeId === `${rowIndex}+${cellIndex}` ||
@@ -930,11 +922,11 @@ const HexagonClear = () => {
                   />
                 );
               })}
-            </div>
+            </Board>
           );
         })}
       </div>
-    </div>
+    </MainContainer>
   );
 };
 
