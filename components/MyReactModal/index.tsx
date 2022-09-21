@@ -14,10 +14,15 @@ interface IMyModal {
 const MyModal: FC<IMyModal> = ({ onClose }) => {
   const router = useRouter();
 
+  const handleClick = (href: string) => {
+    router.push(href);
+    onClose();
+  };
+
   return (
     <ModalComponent onClose={onClose}>
       {menuItems.map(({ title, href }, index: number) => (
-        <MenuButton key={index} onClick={() => router.push(href)}>
+        <MenuButton key={index} onClick={() => handleClick(href)}>
           {title}
         </MenuButton>
       ))}

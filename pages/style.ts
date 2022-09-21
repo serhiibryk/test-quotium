@@ -2,7 +2,7 @@ import styled from "styled-components";
 import { palette } from "../utils/common";
 
 export const Thing = styled.div`
-  max-width: 1400px;
+  max-width: 100%;
   padding: 1rem 10rem 1rem 10rem;
   min-height: calc(100vh - 300px);
 `;
@@ -20,4 +20,5 @@ export const TextBold = styled.span`
 export const CardContainer = styled.div`
   display: flex;
   flex-wrap: wrap;
+  justify-content: space-between;
 `;

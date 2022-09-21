@@ -18,7 +18,7 @@ const ModalComponent: FC<IModaleComponent> = ({ onClose, children }) => {
           }}
         >
           {children}
-          <ButtonClose onClick={onClose}>&#128281;</ButtonClose>
+          <ButtonClose onClick={onClose}>&#10006;</ButtonClose>
         </Container>
       </MainContainer>
     </Portal>
