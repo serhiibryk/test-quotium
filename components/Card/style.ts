@@ -4,13 +4,13 @@ export const Figure = styled.figure`
   display: flex;
   flex-direction: column;
   justify-items: center;
-  min-height: 200px;
-  min-width: 250px;
+  min-height: 20rem;
+  min-width: 25rem;
 `;
 
 export const ImgCard = styled.img`
-  max-height: 200px;
-  max-width: 250px;
+  max-height: 20rem;
+  max-width: 25rem;
 `;
 
 export const Сaption = styled.div`

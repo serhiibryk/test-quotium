@@ -3,14 +3,14 @@ import { palette } from "../utils/common";
 
 export const Thing = styled.div`
   max-width: 1400px;
-  padding: 10px 50px 10px 50px;
+  padding: 1rem 5rem 1rem 5rem;
   min-height: calc(100vh - 300px);
 `;
 
 export const TextContainer = styled.div`
   max-width: 400px;
-  padding-left: 20px;
-  border-left: 10px solid ${palette.white};
+  padding-left: 2rem;
+  border-left: 10px solid ${palette.footerGrey};
 `;
 
 export const TextBold = styled.span`

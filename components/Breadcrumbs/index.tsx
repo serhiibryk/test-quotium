@@ -38,22 +38,26 @@ export const BreadCrumbs = () => {
 
   return (
     <Thing>
-      <LinkHome>Home </LinkHome>
+      {router.pathname !== "/" && (
+        <>
+          <LinkHome>Home </LinkHome>
 
-      {crumbs.map((item: any, i: number) => {
-        return (
-          <div key={i}>
-            {item.link !== "/" && (
-              <Link href={item.link}>
-                <a>
-                  <UnicodeSymbol>&rsaquo; </UnicodeSymbol>
-                  <NextLink>{item.label}</NextLink>
-                </a>
-              </Link>
-            )}
-          </div>
-        );
-      })}
+          {crumbs.map((item: any, i: number) => {
+            return (
+              <div key={i}>
+                {item.link !== "/" && (
+                  <Link href={item.link}>
+                    <a>
+                      <UnicodeSymbol>&#10095;</UnicodeSymbol>
+                      <NextLink>{item.label}</NextLink>
+                    </a>
+                  </Link>
+                )}
+              </div>
+            );
+          })}
+        </>
+      )}
     </Thing>
   );
 };

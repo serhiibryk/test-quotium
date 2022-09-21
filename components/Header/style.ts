@@ -2,22 +2,13 @@ import styled from "styled-components";
 import { palette } from "../../utils/common";
 
 export const Thing = styled.header`
-  min-height: 100px;
+  min-height: 10rem;
   background-color: ${palette.white};
-  /* background-color: #b2c2bf; */
   display: flex;
   justify-content: space-between;
   align-items: flex-end;
-  padding: 10px 50px 10px 50px;
+  padding: 1rem 5rem 1rem 5rem;
 `;
-
-// export const BreadCrumbsContainer = styled.div`
-//   position: absolute;
-//   /* display: flex; */
-
-//   top: 100px;
-//   left: 50px;
-// `;
 
 export const ImgLogo = styled.img`
   height: 70px;

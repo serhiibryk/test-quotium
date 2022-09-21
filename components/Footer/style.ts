@@ -5,9 +5,9 @@ export const Thing = styled.footer`
   display: flex;
   justify-content: space-between;
   text-align: center;
-  min-height: 200px;
+  min-height: 20rem;
   background-color: ${palette.footerGrey};
-  padding: 10px 50px 10px 50px;
+  padding: 1rem 5rem 1rem 5rem;
   border-top: 5px solid;
   border-image: linear-gradient(
     to right,

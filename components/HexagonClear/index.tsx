@@ -1,7 +1,6 @@
 import React, { useMemo, useState } from "react";
 
 import Hex from "../Hex";
-import { Board, MainContainer } from "./style";
 
 const DEFAULT_CELL: HexCell = {
   parent: "",
@@ -884,11 +883,11 @@ const HexagonClear = () => {
   };
 
   return (
-    <MainContainer>
+    <div>
       <div>
         {board.map((row: any, rowIndex: number) => {
           return (
-            <Board
+            <div
               key={rowIndex}
               style={{
                 marginTop: "-10px",
@@ -922,11 +921,11 @@ const HexagonClear = () => {
                   />
                 );
               })}
-            </Board>
+            </div>
           );
         })}
       </div>
-    </MainContainer>
+    </div>
   );
 };
 
