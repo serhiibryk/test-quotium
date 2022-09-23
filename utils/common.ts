@@ -1,25 +1,24 @@
 interface IRouterListFunc {
   href: string;
   title: string;
-  // privat: boolean;
 }
 
 export const menuItems = (t: (a: string) => string): IRouterListFunc[] => {
   return [
     {
-      title: t("home"),
+      title: t("menuHome"),
       href: "/",
     },
     {
-      title: "My AI Project",
+      title: t("menuProject"),
       href: "/project",
     },
     {
-      title: "Who we are",
+      title: t("menuInfo"),
       href: "/info",
     },
     {
-      title: "Contact",
+      title: t("menuContact"),
       href: "/contact",
     },
   ];

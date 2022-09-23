@@ -1,36 +1,78 @@
-import React, { useState } from "react";
+import React, { useEffect } from "react";
 import { useTranslation } from "react-i18next";
-import { useEffect } from "react";
-import Select from "react-select";
+import dynamic from "next/dynamic";
+
+const Select = dynamic(() => import("react-select"), {
+  ssr: false,
+});
+
+// import Select from "react-select";
 
 const lngs: ILngs = {
-  en: { label: "ENG", value: "eng" },
-  ua: { label: "UA", value: "ua" },
+  en: { label: "en", value: "en" },
+  ua: { label: "ua", value: "ua" },
+};
+
+const customStyles: any = {
+  option: (provided: Object, state: any) => ({
+    ...provided,
+    border: "none",
+    color: state.isSelected ? "black" : "grey",
+    padding: 10,
+    // height: "40px",
+    // width: "40px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
+  }),
+  control: () => ({
+    position: "relative",
+    width: "55px",
+    heigth: "55px",
+    fontSize: "30px",
+    border: "1px solid black",
+
+    "& .css-1okebmr-indicatorSeparator": {
+      display: "none",
+    },
+
+    "& .css-tj5bde-Svg": {
+      display: "none",
+    },
+  }),
+  singleValue: (provided: Object, state: any) => {
+    const opacity = state.isDisabled ? 1 : 5;
+    const transition = "opacity 300ms";
+
+    return { ...provided, opacity, transition };
+  },
 };
 
 const LanguageMenu: React.FC = (): JSX.Element => {
-  const [currentLng, setCurrentLng] = useState("");
-  const { t, i18n } = useTranslation();
+  const { i18n } = useTranslation();
 
   useEffect(() => {
     const ISSERVER = typeof window === "undefined";
-
     if (!ISSERVER) {
+      console.log(localStorage.getItem("i18nextLng"));
+
       const current = localStorage.getItem("i18nextLng") || i18n.language;
-      setCurrentLng(current);
+      console.log("useEffect", current);
+      i18n.changeLanguage(current);
     }
-  }, []);
-  console.log(currentLng);
+  }, [i18n.language]);
 
   return (
     <div>
       <Select
+        styles={customStyles}
         options={Object.keys(lngs).map((lng) => {
           return (lngs as any)[lng];
         })}
         onChange={(option) => i18n.changeLanguage((option as any).value)}
-        defaultValue={{ label: currentLng, value: currentLng }}
+        value={{ label: i18n.language, value: i18n.language }}
       />
+      1
     </div>
   );
 };
