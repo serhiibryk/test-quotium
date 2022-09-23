@@ -28,3 +28,28 @@ declare interface IButton {
   title: string;
   onClick: () => {};
 }
+
+declare interface ILngs {
+  en: { label: string; value: string };
+  ua: { label: string; value: string };
+}
+
+declare interface IModaleComponent {
+  onClose: () => void;
+  children: any;
+}
+
+declare interface IMyModal {
+  onClose: () => void;
+}
+
+declare interface IPortal {
+  id: string;
+  children: any;
+}
+
+declare interface ICard {
+  src: string;
+  title: string;
+  text: string;
+}

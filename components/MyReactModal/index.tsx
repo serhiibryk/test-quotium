@@ -7,10 +7,6 @@ import { menuItems } from "../../utils/common";
 import ModalComponent from "../ModalPortal";
 import { MenuButton } from "./style";
 
-interface IMyModal {
-  onClose: () => void;
-}
-
 const MyModal: FC<IMyModal> = ({ onClose }) => {
   const router = useRouter();
 

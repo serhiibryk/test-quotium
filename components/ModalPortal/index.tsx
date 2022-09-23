@@ -1,12 +1,8 @@
 import React, { FC } from "react";
 
 import Portal from "../Portal";
-import { ButtonClose, Container, MainContainer } from "./style";
 
-interface IModaleComponent {
-  onClose: () => void;
-  children: any;
-}
+import { ButtonClose, Container, MainContainer } from "./style";
 
 const ModalComponent: FC<IModaleComponent> = ({ onClose, children }) => {
   return (
