@@ -1,11 +1,11 @@
 import React from "react";
-import type { NextPage } from "next";
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
 import Card from "../components/Card";
 
 import { CardContainer, TextBold, TextContainer, Thing } from "./style";
 
-const Home: NextPage = () => {
+export default function Home() {
   return (
     <Thing>
       <section>
@@ -43,6 +43,12 @@ const Home: NextPage = () => {
       </section>
     </Thing>
   );
-};
+}
 
-export default Home;
+export async function getStaticProps({ locale }: any) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}

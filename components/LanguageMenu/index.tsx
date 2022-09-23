@@ -1,16 +1,11 @@
-import React, { useEffect } from "react";
-import { useTranslation } from "react-i18next";
-import dynamic from "next/dynamic";
-
-const Select = dynamic(() => import("react-select"), {
-  ssr: false,
-});
-
-// import Select from "react-select";
+import React from "react";
+import { useTranslation } from "next-i18next";
+import Select from "react-select";
+import { useRouter } from "next/router";
 
 const lngs: ILngs = {
-  en: { label: "en", value: "en" },
-  ua: { label: "ua", value: "ua" },
+  en: { label: "EN", value: "en" },
+  fr: { label: "FR", value: "fr" },
 };
 
 const customStyles: any = {
@@ -49,30 +44,27 @@ const customStyles: any = {
 };
 
 const LanguageMenu: React.FC = (): JSX.Element => {
-  const { i18n } = useTranslation();
+  const { i18n } = useTranslation("common");
 
-  useEffect(() => {
-    const ISSERVER = typeof window === "undefined";
-    if (!ISSERVER) {
-      console.log(localStorage.getItem("i18nextLng"));
+  const router = useRouter();
 
-      const current = localStorage.getItem("i18nextLng") || i18n.language;
-      console.log("useEffect", current);
-      i18n.changeLanguage(current);
-    }
-  }, [i18n.language]);
+  const handleChange = (option: any) => {
+    router.push(router.route, router.asPath, {
+      locale: option.value,
+    });
+  };
 
   return (
     <div>
       <Select
-        styles={customStyles}
-        options={Object.keys(lngs).map((lng) => {
-          return (lngs as any)[lng];
-        })}
-        onChange={(option) => i18n.changeLanguage((option as any).value)}
-        value={{ label: i18n.language, value: i18n.language }}
+        // styles={customStyles}
+        options={Object.keys(lngs).map((lng) => (lngs as any)[lng])}
+        onChange={handleChange}
+        value={{
+          label: i18n.language.toLocaleUpperCase(),
+          value: i18n.language,
+        }}
       />
-      1
     </div>
   );
 };

@@ -1,5 +1,5 @@
 import React, { useMemo } from "react";
-import { useTranslation } from "react-i18next";
+import { useTranslation } from "next-i18next";
 
 import { useRouter } from "next/router";
 
@@ -13,7 +13,7 @@ import { ButtonOpenModal, MenuContainer, ModalContainer } from "./style";
 const NavBar = () => {
   const [isModalOpen, onModalOpen, onModalClose] = useToggle();
 
-  const { i18n, t } = useTranslation();
+  const { i18n, t } = useTranslation("common");
 
   const router = useRouter();
 
@@ -22,8 +22,6 @@ const NavBar = () => {
       <Button key={index} onClick={() => router.push(href)} title={title} />
     ));
   }, [i18n]);
-
-  console.log(activeList);
 
   return (
     <nav>

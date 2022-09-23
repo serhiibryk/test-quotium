@@ -1,10 +1,8 @@
 import React, { Suspense } from "react";
-
+import { appWithTranslation } from "next-i18next";
 import type { AppProps } from "next/app";
 
 import MainLayout from "../components/MainLayout";
-
-import "../i18n";
 
 import "../styles/globals.css";
 
@@ -18,4 +16,4 @@ function MyApp({ Component, pageProps }: AppProps) {
   );
 }
 
-export default MyApp;
+export default appWithTranslation(MyApp);
