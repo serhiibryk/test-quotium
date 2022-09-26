@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const Thing = styled.div`
-  max-width: 1400px;
-  padding: 1rem 10rem 1rem 10rem;
-  height: calc(100vh - 300px);
+  width: 1400px;
+  margin: 5rem 5rem 1rem 5rem;
+  min-height: calc(100vh - 300px);
 `;

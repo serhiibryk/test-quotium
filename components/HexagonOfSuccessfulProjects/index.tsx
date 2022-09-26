@@ -858,7 +858,7 @@ const generateBoard = (
   ];
 };
 
-const HexagonClear = () => {
+const HexagonOfSuccessfulProjects = () => {
   // const classes = useStyles();
   const { t } = useTranslation("common");
   const [activeCase, setActiveCase] = useState({
@@ -936,4 +936,4 @@ const HexagonClear = () => {
   );
 };
 
-export default HexagonClear;
+export default HexagonOfSuccessfulProjects;

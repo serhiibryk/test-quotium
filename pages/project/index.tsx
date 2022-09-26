@@ -1,7 +1,7 @@
 import React from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-import HexagonClear from "../../components/HexagonOfSuccessfulProjects";
+import HexagonOfSuccessfulProjects from "../../components/HexagonOfSuccessfulProjects";
 
 import { MainContainer, Thing } from "./style";
 
@@ -10,7 +10,7 @@ const Project = () => {
     <MainContainer>
       <title>AI Project</title>
       <Thing>
-        <HexagonClear />
+        <HexagonOfSuccessfulProjects />
       </Thing>
     </MainContainer>
   );
