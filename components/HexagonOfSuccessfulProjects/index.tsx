@@ -1,3 +1,4 @@
+import { useTranslation } from "next-i18next";
 import React, { useMemo, useState } from "react";
 
 import Hex from "../Hex";
@@ -9,7 +10,12 @@ const DEFAULT_CELL: HexCell = {
   level: 0,
   interactiveCases: [],
 };
-const generateBoard = (activeCase: string, parent: string): HexCell[][] => {
+
+const generateBoard = (
+  activeCase: string,
+  parent: string,
+  t: (value: string) => string
+): HexCell[][] => {
   return [
     [
       { ...DEFAULT_CELL },
@@ -167,7 +173,7 @@ const generateBoard = (activeCase: string, parent: string): HexCell[][] => {
       { ...DEFAULT_CELL },
       { ...DEFAULT_CELL },
       {
-        title: "Healthcare",
+        title: t("titleHealthcare"),
 
         clickable: true,
         level: 1,
@@ -854,13 +860,14 @@ const generateBoard = (activeCase: string, parent: string): HexCell[][] => {
 
 const HexagonClear = () => {
   // const classes = useStyles();
+  const { t } = useTranslation("common");
   const [activeCase, setActiveCase] = useState({
     activeId: "",
     parent: "",
   });
 
   const board = useMemo(
-    () => generateBoard(activeCase.activeId, activeCase.parent),
+    () => generateBoard(activeCase.activeId, activeCase.parent, t),
     [activeCase]
   );
 

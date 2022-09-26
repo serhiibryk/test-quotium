@@ -1,7 +1,7 @@
 import React from "react";
 import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 
-import HexagonClear from "../../components/HexagonClear";
+import HexagonClear from "../../components/HexagonOfSuccessfulProjects";
 
 import { MainContainer, Thing } from "./style";
 
