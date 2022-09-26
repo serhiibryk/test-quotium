@@ -31,7 +31,7 @@ declare interface IButton {
 
 declare interface ILngs {
   en: { label: string; value: string };
-  ua: { label: string; value: string };
+  fr: { label: string; value: string };
 }
 
 declare interface IModaleComponent {

@@ -53,6 +53,7 @@ const LanguageMenu: React.FC = (): JSX.Element => {
       locale: option.value,
     });
   };
+  console.log(i18n);
 
   return (
     <div>
@@ -61,7 +62,7 @@ const LanguageMenu: React.FC = (): JSX.Element => {
         options={Object.keys(lngs).map((lng) => (lngs as any)[lng])}
         onChange={handleChange}
         value={{
-          label: i18n.language.toLocaleUpperCase(),
+          label: i18n.language?.toLocaleUpperCase(),
           value: i18n.language,
         }}
       />

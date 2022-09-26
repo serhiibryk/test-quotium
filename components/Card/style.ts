@@ -12,12 +12,13 @@ export const Figure = styled.figure`
   border: 2px solid black;
 
   @media screen and (max-width: 1050px) {
+    margin: 0 2rem 2rem 0;
     width: 48%;
   }
 
   @media screen and (max-width: 700px) {
     width: 100%;
-    margin: 0;
+    margin: 0 0 2rem 0;
   }
 `;
 

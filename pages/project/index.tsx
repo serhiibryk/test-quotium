@@ -8,6 +8,7 @@ import { MainContainer, Thing } from "./style";
 const Project = () => {
   return (
     <MainContainer>
+      <title>AI Project</title>
       <Thing>
         <HexagonClear />
       </Thing>

@@ -1,3 +1,4 @@
+import { serverSideTranslations } from "next-i18next/serverSideTranslations";
 import React from "react";
 
 import Input from "../../components/Input";
@@ -11,6 +12,7 @@ const Contact = () => {
   return (
     <Thing>
       <MainContainer>
+        <title>Contact</title>
         <h2>Contact us</h2>
         <p>Needed implementation</p>
         <Input title={"Name"} rules={""} placeholder={""}>
@@ -36,3 +38,11 @@ const Contact = () => {
 };
 
 export default Contact;
+
+export async function getStaticProps({ locale }: any) {
+  return {
+    props: {
+      ...(await serverSideTranslations(locale, ["common"])),
+    },
+  };
+}

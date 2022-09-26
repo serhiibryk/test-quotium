@@ -30,7 +30,7 @@ export default function Home() {
         </CardContainer>
         <br />
         <article>
-          <title>Who we are</title>
+          <title>Quotium</title>
           <TextContainer>
             <p>
               <TextBold>Blockquote </TextBold>
