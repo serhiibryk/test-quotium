@@ -1,6 +1,6 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
-import { Figure, ImgCard, Сaption } from "./style";
+import { Figure, ImgCard, Сaption } from './style';
 
 const Card: FC<ICard> = ({ src, title, text }) => {
   return (

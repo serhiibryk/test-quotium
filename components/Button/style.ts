@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { palette } from "../../utils/common";
+import styled from 'styled-components';
+
+import { palette } from '../../utils/common';
 
 export const Btn = styled.button`
   width: 100px;

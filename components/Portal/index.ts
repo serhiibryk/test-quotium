@@ -1,6 +1,7 @@
-import { FC } from "react";
-import { createPortal } from "react-dom";
-import usePortal from "../../hooks/usePortal";
+import { FC } from 'react';
+import { createPortal } from 'react-dom';
+
+import usePortal from '../../hooks/usePortal';
 
 const Portal: FC<IPortal> = ({ id, children }) => {
   const target = usePortal(id);

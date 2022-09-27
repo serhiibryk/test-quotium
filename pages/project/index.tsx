@@ -1,9 +1,9 @@
-import React from "react";
-import { serverSideTranslations } from "next-i18next/serverSideTranslations";
+import React from 'react';
+import { serverSideTranslations } from 'next-i18next/serverSideTranslations';
 
-import HexagonOfSuccessfulProjects from "../../components/HexagonOfSuccessfulProjects";
+import HexagonOfSuccessfulProjects from '../../components/HexagonOfSuccessfulProjects';
 
-import { MainContainer, Thing } from "./style";
+import { MainContainer, Thing } from './style';
 
 const Project = () => {
   return (
@@ -19,7 +19,7 @@ const Project = () => {
 export async function getStaticProps({ locale }: any) {
   return {
     props: {
-      ...(await serverSideTranslations(locale, ["common"])),
+      ...(await serverSideTranslations(locale, ['common'])),
       // Will be passed to the page component as props
     },
   };

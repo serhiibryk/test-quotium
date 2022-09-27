@@ -1,15 +1,14 @@
-import React, { useEffect } from "react";
+import React, { useEffect } from 'react';
+import Link from 'next/link';
+import { useRouter } from 'next/router';
 
-import Link from "next/link";
-import { useRouter } from "next/router";
-
-import { LinkHome, NextLink, Thing, UnicodeSymbol } from "./style";
+import { LinkHome, NextLink, Thing, UnicodeSymbol } from './style';
 
 const Route2LabelMap = {
-  "/": "Home",
-  "/info": "Who we are",
-  "/contact": "Contact",
-  "/project": "My AI Project",
+  '/': 'Home',
+  '/info': 'Who we are',
+  '/contact': 'Contact',
+  '/project': 'My AI Project',
 };
 
 export const BreadCrumbs = () => {
@@ -18,8 +17,8 @@ export const BreadCrumbs = () => {
   const [crumbs, setCrumbs] = React.useState([]);
 
   useEffect(() => {
-    const segmentsPath = router.asPath.split("/");
-    const segmentsRoute = router.route.split("/");
+    const segmentsPath = router.asPath.split('/');
+    const segmentsRoute = router.route.split('/');
 
     const crumbLinks = CombineAccumulatively(segmentsPath);
     const crumbLabels = CombineAccumulatively(segmentsRoute);
@@ -34,18 +33,18 @@ export const BreadCrumbs = () => {
       return crumb;
     });
     setCrumbs(crumbs);
-  }, [router.route]);
+  }, [router.route, router.asPath]);
 
   return (
     <Thing>
-      {router.pathname !== "/" && (
+      {router.pathname !== '/' && (
         <>
           <LinkHome>Home </LinkHome>
 
           {crumbs.map((item: any, i: number) => {
             return (
               <div key={i}>
-                {item.link !== "/" && (
+                {item.link !== '/' && (
                   <Link href={item.link}>
                     <a>
                       <UnicodeSymbol>&#10095;</UnicodeSymbol>
@@ -64,8 +63,8 @@ export const BreadCrumbs = () => {
 
 const CombineAccumulatively = (segments: any) => {
   const links = segments.reduce((acc: any, cur: any, curIndex: number) => {
-    const last = curIndex > 1 ? acc[curIndex - 1] : "";
-    const newPath = last + "/" + cur;
+    const last = curIndex > 1 ? acc[curIndex - 1] : '';
+    const newPath = last + '/' + cur;
     acc.push(newPath);
     return acc;
   }, []);

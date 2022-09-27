@@ -6,11 +6,16 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint --ext .ts,.tsx"
+    "lint": "eslint --ext .ts,.tsx",
+    "lint2": "next lint",
+    "lint2:fix": "next lint --fix",
+    "prepare": "husky install",
+    "pre-commit": "next lint --fix && git add -A ."
   },
   "dependencies": {
     "babel-plugin-styled-components": "^2.0.7",
     "classnames": "^2.3.2",
+    "eslint-plugin-simple-import-sort": "^8.0.0",
     "i18next": "^21.9.2",
     "next": "^12.3.0",
     "next-i18next": "^12.0.1",
@@ -24,7 +29,7 @@
     "@types/react": "18.0.20",
     "@types/react-dom": "18.0.6",
     "@types/styled-components": "^5.1.26",
-    "@typescript-eslint/eslint-plugin": "^5.38.0",
+    "@typescript-eslint/eslint-plugin": "^5.38.1",
     "@typescript-eslint/parser": "^5.38.0",
     "eslint": "^8.24.0",
     "eslint-config-next": "12.3.0",
@@ -32,7 +37,7 @@
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-react": "^7.31.8",
     "husky": "^8.0.1",
-    "prettier": "^2.7.1",
+    "prettier": "2.7.1",
     "pretty-quick": "^3.1.3",
     "typescript": "4.8.3"
   },

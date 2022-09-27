@@ -1,15 +1,15 @@
-import React, { FC } from "react";
-import classNames from "classnames";
+import React, { FC } from 'react';
+import classNames from 'classnames';
 
-import { MainComponent } from "./style";
+import { MainComponent } from './style';
 
 const Hex: FC<HexProps> = ({ content, cell, level, isActive, onClick }) => {
-  const bgColor = cell.backgroundColor ?? "#FFF";
+  const bgColor = cell.backgroundColor ?? '#FFF';
   const size = 70;
 
   return (
     <MainComponent
-      className={classNames("hex", {
+      className={classNames('hex', {
         level1: level === 1,
         level2: level === 2,
         isActive,
@@ -18,44 +18,42 @@ const Hex: FC<HexProps> = ({ content, cell, level, isActive, onClick }) => {
       style={{
         height: `${size}px`,
         width: `${size}px`,
-        boxSizing: "border-box",
-        position: "relative",
-        borderRadius: "100%",
+        boxSizing: 'border-box',
+        position: 'relative',
+        borderRadius: '100%',
       }}
     >
       <div
-        className={"inner-block"}
+        className={'inner-block'}
         style={{
-          boxSizing: "border-box",
-          width: 70 / Math.sqrt(3) + "px",
-          height: "100%",
-          margin: "0 auto",
-          position: "absolute",
+          boxSizing: 'border-box',
+          width: 70 / Math.sqrt(3) + 'px',
+          height: '100%',
+          margin: '0 auto',
+          position: 'absolute',
           top: 0,
           left: 0,
           right: 0,
-          transform: "rotate(90deg)",
-          display: "flex",
-          justifyContent: "center",
-          alignItems: "center",
+          transform: 'rotate(90deg)',
+          display: 'flex',
+          justifyContent: 'center',
+          alignItems: 'center',
           backgroundColor: bgColor,
           zIndex: 10,
         }}
       >
-        <div style={{ rotate: "-90deg", position: "relative", zIndex: 1 }}>
-          {content}
-        </div>
+        <div style={{ rotate: '-90deg', position: 'relative', zIndex: 1 }}>{content}</div>
       </div>
       <div
-        className={"inner-block"}
+        className={'inner-block'}
         style={{
-          boxSizing: "border-box",
-          width: 70 / Math.sqrt(3) + "px",
-          height: "100%",
-          margin: "0 auto",
-          transform: "rotate(150deg)",
-          transformOrigin: "center center",
-          position: "absolute",
+          boxSizing: 'border-box',
+          width: 70 / Math.sqrt(3) + 'px',
+          height: '100%',
+          margin: '0 auto',
+          transform: 'rotate(150deg)',
+          transformOrigin: 'center center',
+          position: 'absolute',
           top: 0,
           left: 0,
           backgroundColor: bgColor,
@@ -63,15 +61,15 @@ const Hex: FC<HexProps> = ({ content, cell, level, isActive, onClick }) => {
         }}
       />
       <div
-        className={"inner-block"}
+        className={'inner-block'}
         style={{
-          boxSizing: "border-box",
-          width: 70 / Math.sqrt(3) + "px",
-          height: "100%",
-          margin: "0 auto",
-          transform: "rotate(210deg)",
-          transformOrigin: "center center",
-          position: "absolute",
+          boxSizing: 'border-box',
+          width: 70 / Math.sqrt(3) + 'px',
+          height: '100%',
+          margin: '0 auto',
+          transform: 'rotate(210deg)',
+          transformOrigin: 'center center',
+          position: 'absolute',
           top: 0,
           left: 0,
           backgroundColor: bgColor,

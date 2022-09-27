@@ -1,21 +1,17 @@
-import { useTranslation } from "next-i18next";
-import React, { useMemo, useState } from "react";
+import React, { useMemo, useState } from 'react';
+import { useTranslation } from 'next-i18next';
 
-import Hex from "../Hex";
+import Hex from '../Hex';
 
 const DEFAULT_CELL: HexCell = {
-  parent: "",
+  parent: '',
   border: {},
   clickable: false,
   level: 0,
   interactiveCases: [],
 };
 
-const generateBoard = (
-  activeCase: string,
-  parent: string,
-  t: (value: string) => string
-): HexCell[][] => {
+const generateBoard = (activeCase: string, parent: string, t: (value: string) => string): HexCell[][] => {
   return [
     [
       { ...DEFAULT_CELL },
@@ -248,25 +244,18 @@ const generateBoard = (
 
 const HexagonOfNeeds = () => {
   // const classes = useStyles();
-  const { t } = useTranslation("common");
+  const { t } = useTranslation('common');
   const [activeCase, setActiveCase] = useState({
-    activeId: "",
-    parent: "",
+    activeId: '',
+    parent: '',
   });
 
-  const board = useMemo(
-    () => generateBoard(activeCase.activeId, activeCase.parent, t),
-    [activeCase]
-  );
+  const board = useMemo(() => generateBoard(activeCase.activeId, activeCase.parent, t), [activeCase, t]);
 
   const selectCell = (rowIndex: number, cellIndex: number) => {
     board.forEach((row, currRowIndex) =>
       row.forEach((column, currCellIndex) => {
-        if (
-          column.clickable &&
-          rowIndex === currRowIndex &&
-          currCellIndex === cellIndex
-        ) {
+        if (column.clickable && rowIndex === currRowIndex && currCellIndex === cellIndex) {
           setActiveCase((prev) => ({
             ...prev,
             activeId: `${currRowIndex}+${currCellIndex}`,
@@ -285,9 +274,9 @@ const HexagonOfNeeds = () => {
             <div
               key={rowIndex}
               style={{
-                marginTop: "-10px",
-                display: "flex",
-                justifyContent: "center",
+                marginTop: '-10px',
+                display: 'flex',
+                justifyContent: 'center',
               }}
             >
               {row.map((cell: HexCell, cellIndex: number) => {

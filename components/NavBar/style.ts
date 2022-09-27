@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { palette } from "../../utils/common";
+import styled from 'styled-components';
+
+import { palette } from '../../utils/common';
 
 export const ModalContainer = styled.div`
   display: none;

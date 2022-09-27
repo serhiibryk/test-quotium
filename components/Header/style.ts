@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { palette } from "../../utils/common";
+import styled from 'styled-components';
+
+import { palette } from '../../utils/common';
 
 export const Thing = styled.header`
   min-height: 10rem;

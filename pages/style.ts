@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { palette } from "../utils/common";
+import styled from 'styled-components';
+
+import { palette } from '../utils/common';
 
 export const Thing = styled.div`
   max-width: 100%;

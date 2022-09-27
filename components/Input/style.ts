@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { palette } from "../../utils/common";
+import styled from 'styled-components';
+
+import { palette } from '../../utils/common';
 
 export const InputBar = styled.input`
   margin: 1rem 0 0 0;

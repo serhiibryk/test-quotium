@@ -1,5 +1,6 @@
-import styled from "styled-components";
-import { palette } from "../../utils/common";
+import styled from 'styled-components';
+
+import { palette } from '../../utils/common';
 
 export const MenuButton = styled.div`
   cursor: pointer;

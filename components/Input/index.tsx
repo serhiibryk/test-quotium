@@ -1,6 +1,7 @@
-import React, { FC, FormEvent, useState } from "react";
-import classNames from "classnames";
-import { InputBar, InputContainer, Title, TitleContainer } from "./style";
+import React, { FC, FormEvent, useState } from 'react';
+import classNames from 'classnames';
+
+import { InputBar, InputContainer, Title, TitleContainer } from './style';
 
 interface IInput {
   title: string;
@@ -10,7 +11,7 @@ interface IInput {
 }
 
 const Input: FC<IInput> = ({ title, rules, placeholder, children }) => {
-  const [inputValue, setInputValue] = useState("");
+  const [inputValue, setInputValue] = useState('');
 
   const handleChange = (e: FormEvent<HTMLInputElement>) => {
     setInputValue(e.currentTarget.value);
@@ -25,18 +26,18 @@ const Input: FC<IInput> = ({ title, rules, placeholder, children }) => {
               className={classNames(
                 { show: inputValue },
 
-                "label"
+                'label'
               )}
-              htmlFor={"input"}
+              htmlFor={'input'}
             >
               {title}
             </Title>
             {children}
           </TitleContainer>
           <InputBar
-            id={"input"}
+            id={'input'}
             value={inputValue}
-            className={classNames("inputLabel")}
+            className={classNames('inputLabel')}
             {...rules}
             onChange={handleChange}
             placeholder={placeholder}

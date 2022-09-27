@@ -1,12 +1,11 @@
-import React, { FC } from "react";
-import { useTranslation } from "next-i18next";
+import React, { FC } from 'react';
+import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 
-import { useRouter } from "next/router";
+import { menuItems } from '../../utils/common';
+import ModalComponent from '../ModalPortal';
 
-import { menuItems } from "../../utils/common";
-import ModalComponent from "../ModalPortal";
-
-import { MenuButton } from "./style";
+import { MenuButton } from './style';
 
 const MyModal: FC<IMyModal> = ({ onClose }) => {
   const { t } = useTranslation();

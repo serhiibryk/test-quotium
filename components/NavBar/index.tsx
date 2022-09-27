@@ -1,19 +1,18 @@
-import React, { useMemo } from "react";
-import { useTranslation } from "next-i18next";
+import React, { useMemo } from 'react';
+import { useRouter } from 'next/router';
+import { useTranslation } from 'next-i18next';
 
-import { useRouter } from "next/router";
+import useToggle from '../../hooks/useToggle';
+import { menuItems } from '../../utils/common';
+import Button from '../Button';
+import MyModal from '../MyReactModal';
 
-import { menuItems } from "../../utils/common";
-import Button from "../Button";
-import MyModal from "../MyReactModal";
-import useToggle from "../../hooks/useToggle";
-
-import { ButtonOpenModal, MenuContainer, ModalContainer } from "./style";
+import { ButtonOpenModal, MenuContainer, ModalContainer } from './style';
 
 const NavBar = () => {
   const [isModalOpen, onModalOpen, onModalClose] = useToggle();
 
-  const { i18n, t } = useTranslation("common");
+  const { i18n, t } = useTranslation('common');
 
   const router = useRouter();
 
@@ -21,7 +20,7 @@ const NavBar = () => {
     return menuItems(t).map(({ title, href }, index: number) => (
       <Button key={index} onClick={() => router.push(href)} title={title} />
     ));
-  }, [i18n]);
+  }, [router, t]);
 
   return (
     <nav>

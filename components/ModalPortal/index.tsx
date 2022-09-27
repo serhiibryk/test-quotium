@@ -1,12 +1,12 @@
-import React, { FC } from "react";
+import React, { FC } from 'react';
 
-import Portal from "../Portal";
+import Portal from '../Portal';
 
-import { ButtonClose, Container, MainContainer } from "./style";
+import { ButtonClose, Container, MainContainer } from './style';
 
 const ModalComponent: FC<IModaleComponent> = ({ onClose, children }) => {
   return (
-    <Portal id={"portal"}>
+    <Portal id={'portal'}>
       <MainContainer onClick={onClose}>
         <Container
           onClick={(e) => {
