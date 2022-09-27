@@ -1,6 +1,6 @@
 import React, { useMemo, useState } from 'react';
-import { useTranslation } from 'next-i18next';
 
+// import { useTranslation } from 'next-i18next';
 import Hex from '../Hex';
 
 const DEFAULT_CELL: HexCell = {
@@ -11,7 +11,8 @@ const DEFAULT_CELL: HexCell = {
   interactiveCases: [],
 };
 
-const generateBoard = (activeCase: string, parent: string, t: (value: string) => string): HexCell[][] => {
+const generateBoard = (): // activeCase: string, parent: string, t: (value: string) => string
+HexCell[][] => {
   return [
     [
       { ...DEFAULT_CELL },
@@ -244,13 +245,19 @@ const generateBoard = (activeCase: string, parent: string, t: (value: string) =>
 
 const HexagonOfNeeds = () => {
   // const classes = useStyles();
-  const { t } = useTranslation('common');
+  // const { t } = useTranslation('common');
   const [activeCase, setActiveCase] = useState({
     activeId: '',
     parent: '',
   });
 
-  const board = useMemo(() => generateBoard(activeCase.activeId, activeCase.parent, t), [activeCase, t]);
+  const board = useMemo(
+    () => generateBoard(),
+    // activeCase.activeId, activeCase.parent, t
+    [
+      // activeCase, t
+    ]
+  );
 
   const selectCell = (rowIndex: number, cellIndex: number) => {
     board.forEach((row, currRowIndex) =>

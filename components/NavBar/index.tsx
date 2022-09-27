@@ -12,7 +12,7 @@ import { ButtonOpenModal, MenuContainer, ModalContainer } from './style';
 const NavBar = () => {
   const [isModalOpen, onModalOpen, onModalClose] = useToggle();
 
-  const { i18n, t } = useTranslation('common');
+  const { t } = useTranslation('common');
 
   const router = useRouter();
 

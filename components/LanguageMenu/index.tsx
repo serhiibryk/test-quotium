@@ -8,40 +8,40 @@ const lngs: ILngs = {
   fr: { label: 'FR', value: 'fr' },
 };
 
-const customStyles: any = {
-  option: (provided: Object, state: any) => ({
-    ...provided,
-    border: 'none',
-    color: state.isSelected ? 'black' : 'grey',
-    padding: 10,
-    // height: "40px",
-    // width: "40px",
-    display: 'flex',
-    justifyContent: 'center',
-    alignItems: 'center',
-  }),
-  control: () => ({
-    position: 'relative',
-    width: '55px',
-    heigth: '55px',
-    fontSize: '30px',
-    border: '1px solid black',
+// const customStyles: any = {
+//   option: (provided: Object, state: any) => ({
+//     ...provided,
+//     border: 'none',
+//     color: state.isSelected ? 'black' : 'grey',
+//     padding: 10,
+//     // height: "40px",
+//     // width: "40px",
+//     display: 'flex',
+//     justifyContent: 'center',
+//     alignItems: 'center',
+//   }),
+//   control: () => ({
+//     position: 'relative',
+//     width: '55px',
+//     heigth: '55px',
+//     fontSize: '30px',
+//     border: '1px solid black',
 
-    '& .css-1okebmr-indicatorSeparator': {
-      display: 'none',
-    },
+//     '& .css-1okebmr-indicatorSeparator': {
+//       display: 'none',
+//     },
 
-    '& .css-tj5bde-Svg': {
-      display: 'none',
-    },
-  }),
-  singleValue: (provided: Object, state: any) => {
-    const opacity = state.isDisabled ? 1 : 5;
-    const transition = 'opacity 300ms';
+//     '& .css-tj5bde-Svg': {
+//       display: 'none',
+//     },
+//   }),
+//   singleValue: (provided: Object, state: any) => {
+//     const opacity = state.isDisabled ? 1 : 5;
+//     const transition = 'opacity 300ms';
 
-    return { ...provided, opacity, transition };
-  },
-};
+//     return { ...provided, opacity, transition };
+//   },
+// };
 
 const LanguageMenu: React.FC = (): JSX.Element => {
   const { i18n } = useTranslation('common');
@@ -58,6 +58,7 @@ const LanguageMenu: React.FC = (): JSX.Element => {
     <div>
       <Select
         // styles={customStyles}
+        id={'languageSelect'}
         options={Object.keys(lngs).map((lng) => (lngs as any)[lng])}
         onChange={handleChange}
         value={{

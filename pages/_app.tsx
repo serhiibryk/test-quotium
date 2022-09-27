@@ -8,7 +8,7 @@ import '../styles/globals.css';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <Suspense fallback='Loading...'>
+    <Suspense fallback={'Loading...'}>
       <MainLayout>
         <Component {...pageProps} />
       </MainLayout>
