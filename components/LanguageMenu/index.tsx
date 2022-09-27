@@ -53,7 +53,6 @@ const LanguageMenu: React.FC = (): JSX.Element => {
       locale: option.value,
     });
   };
-  console.log(i18n);
 
   return (
     <div>
